@@ -10,4 +10,9 @@ RUN npm install --silent
 
 COPY . ./
 
+RUN mkdir -p /app/node_modules/.cache && \
+    chown -R node:node /app
+
+USER node
+
 CMD ["npm", "start"]
